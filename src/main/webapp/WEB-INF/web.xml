@@ -6,6 +6,11 @@
     <servlet>
         <servlet-name>zuulServlet</servlet-name>
         <servlet-class>com.example.zuul.ZuulServlet</servlet-class>
+        <init-param>
+            <param-name>dirAllowed</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
     </servlet>
 
     <!-- Map Zuul servlet only to /api/* -->
@@ -13,5 +18,9 @@
         <servlet-name>zuulServlet</servlet-name>
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
 
 </web-app>
