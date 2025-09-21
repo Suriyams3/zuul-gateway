@@ -11,7 +11,6 @@ RUN apt-get update && \
 # Copy app and build
 WORKDIR /app
 COPY . /app
-RUN ./gradlew build
 
 # Deploy your WAR or class files to Jetty
 COPY build/libs/zuul-gateway.war $JETTY_HOME/webapps/
