@@ -6,7 +6,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Server server = new Server(8080);
+        Server server = new Server(8079);
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
@@ -16,7 +16,7 @@ public class Main {
         context.addServlet(new ServletHolder(new ZuulServlet()), "/*");
 
         server.start();
-        System.out.println("API Gateway started at http://localhost:8080");
+        System.out.println("API Gateway started at http://localhost:8079");
         server.join();
     }
 }

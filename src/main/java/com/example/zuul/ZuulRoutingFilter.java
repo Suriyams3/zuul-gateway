@@ -37,9 +37,9 @@ public class ZuulRoutingFilter extends ZuulFilter {
             String targetUrl;
 
             if (path.startsWith("/api/service1")) {
-                targetUrl = "http://localhost:8081" + path.replaceFirst("/api/service1", "");
+                targetUrl = "http://localhost:8082" + path.replaceFirst("/api/service1", "");
             } else if (path.startsWith("/api/service2")) {
-                targetUrl = "http://localhost:8082" + path.replaceFirst("/api/service2", "");
+                targetUrl = "http://localhost:8083" + path.replaceFirst("/api/service2", "");
             } else {
                 ctx.setSendZuulResponse(false);
                 ctx.setResponseStatusCode(404);
