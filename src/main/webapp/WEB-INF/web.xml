@@ -1,0 +1,17 @@
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         version="4.0"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_4_0.xsd">
+
+    <servlet>
+        <servlet-name>zuulServlet</servlet-name>
+        <servlet-class>com.example.zuul.ZuulServlet</servlet-class>
+    </servlet>
+
+    <!-- Map Zuul servlet only to /api/* -->
+    <servlet-mapping>
+        <servlet-name>zuulServlet</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>

@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.example'
+version = '1.0'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Use javax.servlet API for Zuul compatibility
+    compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+
+    implementation 'com.netflix.zuul:zuul-core:1.3.1'
+
+    // Jetty with javax servlet support (Jetty 9.x or 10.x)
+    implementation 'org.eclipse.jetty:jetty-server:9.4.50.v20221201'
+    implementation 'org.eclipse.jetty:jetty-servlet:9.4.50.v20221201'
+
+    implementation 'commons-io:commons-io:2.11.0'
+    implementation 'org.slf4j:slf4j-simple:2.0.12'
+}
+
+application {
+    mainClass = 'com.example.zuul.Main'
+}
