@@ -14,7 +14,7 @@ COPY . /app
 RUN ./gradlew build
 
 # Deploy your WAR or class files to Jetty
-COPY build/libs/your-app.war $JETTY_HOME/webapps/
+COPY build/libs/zuul-gateway.war $JETTY_HOME/webapps/
 
 EXPOSE 8080
 CMD ["sh", "-c", "$JETTY_HOME/bin/jetty.sh run"]
